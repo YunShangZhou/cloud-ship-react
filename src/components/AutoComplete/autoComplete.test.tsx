@@ -35,9 +35,25 @@ const testProps: AutoCompleteProps = {
 //   //   renderOption: jest.fn(),
 // };
 
-let wrapper: RenderResult, inputNode: HTMLInputElement;
-// optionsWrapper: RenderResult,
-// optionsInputNode: HTMLInputElement;
+// const fetchProps: AutoCompleteProps = {
+//   fetchSuggestions: (query) => {
+//     return fetch(`https://api.github.com/search/users?q=${query}`)
+//       .then((res) => {
+//         return res.json();
+//       })
+//       .then(({ items }) => {
+//         return items.map((item: any) => ({ value: item.login, ...item }));
+//       });
+//   },
+//   onSelect: jest.fn(),
+//   placeholder: "auto-complete",
+// };
+
+let wrapper: RenderResult;
+
+let inputNode: HTMLInputElement;
+// let optionsWrapper: RenderResult;
+// let optionsInputNode: HTMLInputElement;
 describe("autoComplete testing", () => {
   beforeEach(() => {
     wrapper = render(<AutoComplete {...testProps} />);
@@ -45,10 +61,12 @@ describe("autoComplete testing", () => {
       "auto-complete"
     ) as HTMLInputElement;
 
-    //   optionsWrapper = render(<AutoComplete {...renderOptionProps} />);
-    //   optionsInputNode = optionsWrapper.queryByPlaceholderText(
-    //     "options-complete"
-    //   ) as HTMLInputElement;
+    // optionsWrapper = render(<AutoComplete {...renderOptionProps} />);
+    // optionsInputNode = optionsWrapper.queryByPlaceholderText(
+    //   "options-complete"
+    // ) as HTMLInputElement;
+
+
   });
 
   //   it("test basic AutoComplete behavior", async () => {

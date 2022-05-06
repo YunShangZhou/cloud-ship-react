@@ -100,8 +100,8 @@ const SubMenu: React.FC<SubMenuProps> = ({
   };
 
   return (
-    <li key={index} className={classes}>
-      <div className="submenu-title" {...mouseEvent} {...hoverEvent}>
+    <li key={index} className={classes} {...hoverEvent}>
+      <div className="submenu-title" {...mouseEvent} >
         {title}
         <Icon icon="angle-down" className="arrow-icon"></Icon>
       </div>

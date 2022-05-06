@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "outDir" : "build", // 输出目录
+        "module": "esnext", // 模块标准
+        "target": "es5", // 目标语法环境
+        "declaration": true, // 声明
+        "jsx": "react", // jsx的环境选择
+        
+        // 默认使用classic模式，去查询模块。现用node去打包
+        "moduleResolution" : "node", // 模块解决方案
+
+        // module不支持 import React，只支持 import * as React,因此需要设置allowSynthetics为ture
+        "allowSyntheticDefaultImports": true,
+    },
+    "include": [
+        "src" // 包含文件
+    ],
+     // 是include的子集
+    "exclude": [
+        "src/**/*.test.tsx",
+        "src/**/*.stories.tsx",
+    ],
+}

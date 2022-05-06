@@ -4,11 +4,14 @@ import {
   RenderResult,
   fireEvent,
   cleanup,
-  wait,
+  // wait,
 } from "@testing-library/react";
 import Menu, { MenuProps } from "./menu";
 import MenuItem from "./menuItem";
 import SubMenu from "./subMenu";
+import {fas} from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+library.add(fas);
 
 jest.setTimeout(30000);
 

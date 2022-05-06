@@ -1,23 +1,51 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Button from "./components/Button/button";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Icon from "./components/Icon/icon";
 import Transiton from "./components/Transition/transition";
+import Input from "./components/Input/Input";
+import axios from "axios";
+
 const App: React.FC = () => {
   const [isShow, setShow] = useState(false);
-
+  const [title,setTitle] = useState("");
+  const postData = {
+    title: "my title",
+    body: "hello"
+  }
   function toggleHello() {
     setShow(!isShow);
   }
+  
+  useEffect(()=>{
+    // get请求
+    axios.get("http://jsonplaceholder.typicode.com/posts/1",{
+      headers: {
+        'X-Requested-With':"XMLHttpRequest",
+        "abc":"1234",
+      },
+      responseType:"json"
+    }).then(res=>{
+      console.log("res",res);
+      setTitle(res.data.title);
+    })
+
+    // post请求
+    axios.post("http://jsonplaceholder.typicode.com/posts",postData).then(res=>{
+      console.log("post response",res);
+    })
+
+  })
 
   return (
     <div className="App">
       <header className="App-header">
+        <div>{title}</div>
         <Menu
           defaultIndex={"0"}
-          // mode="vertical"
+          mode="vertical"
           onSelect={(index) => {
             console.log(index);
           }}
@@ -60,6 +88,11 @@ const App: React.FC = () => {
         >
           toggle button
         </Button>
+        
+        {/* Input组件测试 */}
+        <Input size="lg" icon="coffee" disabled sufferType=".com" prepend="true"/>
+        <br/><br/><br/>
+        <Input size="lg" icon="coffee" preType="www."  append="true"/>
         <code>const a = "b"</code>
         <a
           className="App-link"

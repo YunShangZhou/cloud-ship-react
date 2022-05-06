@@ -1,0 +1,109 @@
+.cloud-input-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  .cloud-input{
+      // width: 300px;
+      display: flex;
+      width: 100%;
+      padding: $input-padding-y $input-padding-x;
+      // height: 100%;
+      border-radius: $border-radius;
+      border:2px solid $border-color;
+      // box-shadow: $box-shadow;
+  }
+  .is-disabled{
+    cursor: not-allowed;
+    background-color: $gray-100;
+
+  }
+  .size-lg {
+    font-size: $font-size-lg;
+  }
+
+  .size-sm {
+    font-size: $font-size-sm;
+  }
+
+  
+  .suffer-class{
+    position: absolute;
+  }
+
+  .pre-class{
+    position: absolute;
+    border-radius: 5%;
+    display: inline-block;
+  }
+
+
+  // 图片前缀后缀 padding设置
+  .input-append{
+    padding-right: 45px;
+  }
+
+  .input-prepend{
+    // width: calc(300px - 35px);
+    padding-left: 45px;
+  }
+
+  // 文字前缀后缀 padding设置
+  .input-preType{
+    padding-left: 75px;
+  }
+  .input-sufferType{
+    padding-right: 75px;
+  }
+
+  // 前缀后缀 文字设置
+  .suffer-class{
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    background-color: $purple;
+    color:$white;
+  }
+
+  .pre-class{
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    background-color: $purple;
+    color:$white;
+  }
+
+  // 图片属性
+  .icon-class {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50px;
+    &:hover {
+      color: $btn-link-color;
+      cursor:pointer;
+    }
+  }
+
+  // 图片前后位置设置
+  .icon-class-append {
+    top: 0;
+    right: 0;
+  }
+
+  .icon-class-prepend {
+    top: 0;
+    left: 0;
+  }
+}

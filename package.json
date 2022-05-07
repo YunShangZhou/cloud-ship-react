@@ -1,10 +1,10 @@
 {
-  "name": "cloudship",
-  "version": "0.1.0",
+  "name": "yunshangzhouship",
+  "version": "0.1.5",
   "private": false,
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "React components library",
   "author": "Yun Shangzhou",
   "license": "MIT",
@@ -19,29 +19,23 @@
     "url": "https://github.com/YunShangZhou/ts-with-react"
   },
   "files": [
-    "build"
+    "dist"
   ],
-  "dependencies": {
-    "@types/testing-library__jest-dom": "^5.14.3",
-    "classnames": "^2.2.6"
-  },
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
-  },
+
   "scripts": {
     "dev": "react-scripts start",
-    "clean": "rimraf ./build",
+    "clean": "rimraf ./dist",
     "lint": "eslint --ext js,ts,tsx src --max-warnings 5",
     "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "test:nowatch": "cross-env CI=true react-scripts test",
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
-    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepublish": "npm run build"
   },
   "husky": {
     "hooks": {
@@ -63,11 +57,20 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@babel/core": "^7.17.9",
+  "dependencies": {
+    "classnames": "^2.2.6",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "axios": "^0.26.1",
+    "react-transition-group": "^4.4.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
     "@storybook/addon-actions": "^5.3.21",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-info": "^5.3.21",
@@ -80,22 +83,20 @@
     "@types/classnames": "^2.2.9",
     "@types/jest": "24.0.23",
     "@types/node": "12.12.14",
-    "@types/react": "^16.9.13",
-    "@types/react-dom": "16.9.4",
-    "@types/react-transition-group": "^4.4.4",
     "@types/storybook__addon-info": "^5.2.4",
-    "axios": "^0.26.1",
     "babel-loader": "^8.2.4",
     "cross-env": "^7.0.0",
     "husky": "^4.2.1",
     "node-sass": "^4.13.0",
+    "react-dom": "^16.12.0",
     "react": "^16.12.0",
     "react-docgen-typescript-loader": "^3.7.2",
-    "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
-    "react-transition-group": "^4.4.2",
     "rimraf": "^3.0.2",
+    "web-vitals": "^2.1.4",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "16.9.4",
     "typescript": "^4.6.3",
-    "web-vitals": "^2.1.4"
+    "@types/react-transition-group": "^4.4.4"
   }
 }

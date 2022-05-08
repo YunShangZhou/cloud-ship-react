@@ -9,6 +9,7 @@ jobs:
           name: Build Job
           runs-on: ubuntu-lastest
           steps:  
-          - name: push operate
+          - name: echo line
             run: echo push master
+          - name: try to build
             run: npm run build

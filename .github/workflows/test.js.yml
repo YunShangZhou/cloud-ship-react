@@ -5,11 +5,17 @@ on:
           branches: [master]
 
 jobs:
-     build_job:
-          name: Build Job
+     lint:
           runs-on: ubuntu-lastest
-          steps:  
-          - name: echo line
-            run: echo push master
-          - name: try to build2
-            run: npm run build
+          steps:
+          - uses: actions/checkout@v2
+          - uses: actions/setup-node@v1
+            with:
+               node-version: "14.x"
+          - name: Install dependencies
+            uses: bahmutov/npm-install@v1
+
+          - name: Run linter
+            run: npm run lint
+
+  

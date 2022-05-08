@@ -24,6 +24,8 @@ jobs:
               - run: npm run build        
     third_job:
             name: Third Job
-            run: echo The third job!!      
+            runs-on: ubuntu-18.04
+            steps:
+              - run: echo The third job!!      
 
             

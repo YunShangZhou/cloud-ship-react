@@ -29,5 +29,4 @@ jobs:
         - name: actions/dependencies@v1
           uses: bahmutov@npm-install@v1
         - run: npm install
-        - run: echo start to build!!
         - run: npm run build

@@ -1,31 +1,26 @@
-name: build CI
+name: Test CI
 
 on: 
-  push:
-      branches: [master]
+    push:
+        branches: [master]
 
 
 jobs:
-    lint:
-      name: Lint Job
-      runs-on: ubuntu-18.04
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
-          with: 
-            node-version: "14.x"
-        - name: install dependencies
-          uses: bahmotov/npm-install@v1
-        - run: npm run lint
-    build:
-      name: Build Job
-      runs-on: ubuntu-18.04
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
-          with: 
-            node-version: "14.x"
-        - name: actions/dependencies@v1
-          uses: bahmutov/npm-install@v1
-        - run: echo start to build!!
-        - run: npm run build
+    first_job:
+            name: First Job
+            runs-on: ubuntu-18.04
+            steps:
+              - uses: actions/checkout@v2
+              - uses: actions/setup-node@v1
+              - uses: bahmutov/npm-install@v1
+              - run: npm lint
+    second_job:
+            name: Second Job
+            runs-on: ubuntu-18.04
+            steps:
+              - uses: actions/checkout@v2
+              - uses: actions/setup-node@v1
+              - uses: bahmutov/npm-install@v1
+              - run: npm run build              
+
+            

@@ -13,7 +13,7 @@ jobs:
         - uses: actions/checkout@v2
         - uses: acitons/setup-node@v1
           with: 
-              node-version: [14.x]
+              node-version: "14.x"
         - name: install dependencies
           uses: bahmotov/npm-install@v1
         - run: npm run lint
@@ -24,7 +24,7 @@ jobs:
         - uses: actions/checkout@v2
         - uses: acitons/setup-node@v1
           with: 
-              node-version: [14.x]
+              node-version: "14.x"
         - name: actions/dependencies@v1
           uses: bahmutov/npm-install@v1
         - run: echo start to build!!

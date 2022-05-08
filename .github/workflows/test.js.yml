@@ -11,5 +11,5 @@ jobs:
           steps:  
           - name: echo line
             run: echo push master
-          - name: try to build
+          - name: try to build2
             run: npm run build

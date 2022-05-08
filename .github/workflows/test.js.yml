@@ -2,7 +2,8 @@
 name: Greeting from Mona
 
 # 定义 Workflow 的触发器
-on: push
+on: 
+   push:
      branches: [master]
 
 # 定义 Workflow 的 job

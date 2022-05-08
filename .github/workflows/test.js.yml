@@ -6,9 +6,9 @@ on:
 
 jobs:
      build_job:
-          runs-on: ubuntu-lastest
           name: Build Job
+          runs-on: ubuntu-lastest
           steps:  
-               - name: push operate
-               run: echo push master
-               run: npm run build
+          - name: push operate
+            run: echo push master
+            run: npm run build

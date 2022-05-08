@@ -18,15 +18,3 @@ jobs:
           uses: bahmutov@npm-install@v1
         - run: npm install
         - run: npm run lint
-    build:
-      name: Build Job
-      runs-on: ubuntu-18.04
-      steps:
-        - uses: actions/checkout@v2
-        - uses: acitons/setup-node@v1
-          with: 
-              node-version: [14.x]
-        - name: actions/dependencies@v1
-          uses: bahmutov@npm-install@v1
-        - run: npm install
-        - run: npm run build

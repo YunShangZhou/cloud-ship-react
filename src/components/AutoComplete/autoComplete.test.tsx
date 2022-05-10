@@ -8,6 +8,7 @@ import {
 } from "./autoComplete";
 config.disabled = true;
 
+// 测试数组
 const testArray = [
   { value: "a", number: 11 },
   { value: "ab", number: 3 },

@@ -6,6 +6,7 @@ import React, {
 } from "react";
 import classNames from "classnames";
 
+// 注明size、type类型
 export type ButtonSize = "lg" | "sm";
 export type ButtonType = "primary" | "default" | "danger" | "link"
 

@@ -7,7 +7,7 @@ import React, {
 import classNames from "classnames";
 
 export type ButtonSize = "lg" | "sm";
-export type ButtonType = "primary" | "default" | "danger" | "link";
+export type ButtonType = "primary" | "default" | "danger" | "link"
 
 interface BaseButtonProps {
   className?: string;

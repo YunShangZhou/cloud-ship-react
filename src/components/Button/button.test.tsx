@@ -27,6 +27,7 @@ const disabledProps: ButtonProps = {
   onClick: jest.fn(),
 };
 
+// children信息
 const msg = "Nice";
 
 //4 测试按钮组件
